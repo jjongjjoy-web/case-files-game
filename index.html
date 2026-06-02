@@ -24,9 +24,68 @@
      ═══════════════════════════════════════════ -->
 
 <!-- ═══════════════════════════════════════════
+     아티스트 스테이트먼트 화면 (첫 진입 화면)
+     ═══════════════════════════════════════════ -->
+<div id="statement-screen">
+  <div class="stmt-inner">
+
+    <!-- 소형 로고 -->
+    <div class="stmt-eyebrow">// Artist Statement</div>
+    <h1 class="stmt-title">CASE FILES</h1>
+    <p class="stmt-genre">네오누아르 3D 수사 게임 &nbsp;&middot;&nbsp; Interactive Neo-Noir</p>
+
+    <div class="stmt-rule"></div>
+
+    <!-- 4블록 그리드 -->
+    <div class="stmt-grid">
+
+      <div class="stmt-block">
+        <div class="stmt-block-label">🎬 &nbsp;작품 소개</div>
+        <p class="stmt-block-text">
+          CASE FILES는 1940년대 미국 네오누아르를 배경으로 한 인터랙티브 3D 수사 게임입니다.
+          미술품 딜러 빅터 크레인이 독살된 날 밤, 플레이어는 사건 현장인 고층 펜트하우스 서재에 홈로 남겨진 형사가 됩니다.
+          의룰인도, 조력자도 없는 밀실 속에서 손끝의 클릭 하나하나가 진실을 향한 유일한 단서가 됩니다.
+        </p>
+      </div>
+
+      <div class="stmt-block">
+        <div class="stmt-block-label">🤖 &nbsp;AI 활용 방식</div>
+        <p class="stmt-block-text">
+          <strong>Gemini API</strong>를 활용해 플레이어가 새로운 단서를 발견할 때마다 AI 형사가 1940년대 하드보일드 누아르 스타일의 독백을 실시간으로 생성합니다.
+          단순한 힌트 텍스트가 아닌, 매 플레이마다 다른 표현과 뉴앙스로 수사의 분위기를 살아있게 만드는 내러티브 엔진입니다.
+        </p>
+      </div>
+
+      <div class="stmt-block">
+        <div class="stmt-block-label">🕹️ &nbsp;플레이 방법</div>
+        <p class="stmt-block-text">
+          화면을 드래그해 펜트하우스를 360° 둘러보고, 빛나는 오브젝트를 클릭해 단서를 수집하세요.
+          핵심 단서 4개 이상을 모으면 범인을 지목할 수 있습니다. 수사의 성패는 당신의 관산력에 달렸습니다.
+        </p>
+      </div>
+
+      <div class="stmt-block">
+        <div class="stmt-block-label">⚙️ &nbsp;제작 도구</div>
+        <p class="stmt-block-text">
+          <strong>Antigravity</strong> (AI 바이브 코딩) &nbsp;&middot;&nbsp;
+          <strong>Three.js</strong> &nbsp;&middot;&nbsp;
+          <strong>Gemini API</strong>
+        </p>
+      </div>
+
+    </div><!-- /stmt-grid -->
+
+    <div class="stmt-rule"></div>
+
+    <button id="stmt-enter-btn" class="btn">수사 개시 &rarr;</button>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
      인트로 화면 (사건 브리핑 및 수사 시작)
      ═══════════════════════════════════════════ -->
-<div id="intro-screen">
+<div id="intro-screen" style="display:none;">
   <div class="intro-logo flicker">CASE FILES</div>
   <div class="intro-subtitle">네오누아르 3D 수사 게임 / 빅터 크레인 독살 사건</div>
 

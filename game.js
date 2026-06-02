@@ -514,8 +514,23 @@ function showEndingScreen(isSuccess, suspectId) {
 
 // ─── 부트스트랩 ───
 document.addEventListener('DOMContentLoaded', () => {
-  initIntro();
-  
+  // 아티스트 스테이트먼트 화면 → 인트로 전환
+  const stmtScreen = document.getElementById('statement-screen');
+  const introScreen = document.getElementById('intro-screen');
+  const enterBtn = document.getElementById('stmt-enter-btn');
+
+  enterBtn.addEventListener('click', () => {
+    // 스테이트먼트 화면 페이드아웃
+    stmtScreen.style.transition = 'opacity 0.5s ease';
+    stmtScreen.style.opacity = '0';
+    setTimeout(() => {
+      stmtScreen.style.display = 'none';
+      // 인트로 화면 표시 후 타자기 시작
+      introScreen.style.display = 'flex';
+      initIntro();
+    }, 500);
+  });
+
   // 3D scene.js 와의 연계를 위해 window 전역 공간에 핵심 인터페이스 바인딩
   window.game = {
     onClueFound: onClueFound
