@@ -24,12 +24,19 @@
 /* ─── 리셋 & 기본 ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body {
-  width: 100%; height: 100%;
+html {
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
   background: var(--bg);
   color: var(--text);
   font-family: 'Noto Serif KR', serif;
-  font-size: 14px; /* 전체 기본 폰트 최소 14px 이상 */
+  font-size: 14px;
   overflow-x: hidden;
   overflow-y: auto;
   user-select: none;
@@ -714,7 +721,7 @@ body::after {
   background: #060609;
   color: var(--text);
   overflow: hidden;
-  z-index: 1;
+  z-index: 10001; /* CRT 오버레이(9999) 위에 렌더링 */
 }
 
 /* 미묘한 배경 노이즈 텍스처 */
@@ -885,4 +892,44 @@ body::after {
   .statement-inner {
     padding: 60px 24px 48px;
   }
+}
+
+/* ─── 아티스트 스테이트먼트 스크롤 유도 버튼 ─── */
+#scroll-to-statement {
+  position: fixed;
+  bottom: 24px;
+  right: 28px;
+  z-index: 10002;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(8, 8, 12, 0.9);
+  border: 1px solid var(--border-accent);
+  color: var(--accent);
+  font-family: 'Special Elite', cursive;
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding: 10px 16px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+#scroll-to-statement:hover {
+  background: rgba(232, 200, 122, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(232, 200, 122, 0.2);
+}
+
+.scroll-btn-arrow {
+  display: inline-block;
+  animation: bounceDown 1.5s ease infinite;
+  font-size: 9px;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(3px); }
 }
